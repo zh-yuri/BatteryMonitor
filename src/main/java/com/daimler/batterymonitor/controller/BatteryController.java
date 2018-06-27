@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.daimler.batterymonitor.model.Battery;
 import com.daimler.batterymonitor.model.BatteryStats;
+import com.daimler.batterymonitor.model.Test;
 import com.daimler.batterymonitor.repository.IBatteryRepository;
 import org.springframework.http.MediaType;
 import java.util.List;
@@ -65,6 +66,12 @@ public class BatteryController
 		List<Battery> batteryRecords = batteryRepository.findByVehicle(vehicle);
 		BatteryStats batteryStats = calculateBatteryStatistics(batteryRecords);
 		return batteryStats;
+	}
+	
+	@GetMapping(value = "/test", produces=MediaType.APPLICATION_JSON_VALUE)
+	public Test getTest()
+	{		
+		return new Test();
 	}
 
 	/*

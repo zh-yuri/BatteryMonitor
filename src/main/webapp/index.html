@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="battery">
+<head>
+<title>Battery Statistics</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<script src="/js/BatteryStats.js"></script>
+</head>
+
+<body>
+	<div ng-controller="battery">
+		<p>Charge Out: {{battery.chargeOut}}</p>
+		<p>Charge In: {{battery.chargeIn}}</p>
+		<p>Fully Recharged: {{battery.fullyRecharged}}</p>
+		<p>Recharging Duration: {{battery.rechargingDuration}}</p>
+		<p>Estimated Life: {{battery.estimatedLife}}</p>
+		<p>State Of Charge: {{battery.batteryCycles[1].stateOfCharge}}</p>		
+	</div>
+</body>
+</html>
